@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var test = 10;
+	function fnc1() {
+		var tb = document.getElementById("t");	// <table></table> 객체
+		var tags = "<tr><td>데이터</td></tr>";
+		tb.innerHTML = tags;
+	}
+</script>
+</head>
+<body onload="fnc1()">
+	<input type="button" onclick="fnc1()" />
+	<table id="t" border="1">
+		
+	</table>
+</body>
+</html>

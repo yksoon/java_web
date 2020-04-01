@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML 요소 가져오기</title>
+
+    <script src="jquery-1.6.2.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+		// h3 요소 모두 가져오기
+		//	var headers = $('h3');
+		//  // 반복문을 써서 반복 : for문 보다는 jQuery의 each문이 사용하기 편리
+		//	for (var i=0; i < headers.length; i++) {
+		//			alert($(headers[i]).html());	
+		//	}
+		
+		// 위 코드를 each문으로 변경
+		$('h3').each(function (index) {
+			alert($(this).text());
+		});
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <h3><b>제목1</b></h3>
+    <h3><b><i>제목2</i></b></h3>
+    <h3><b><u>제목3</u></b></h3>
+
+</body>
+
+</html>

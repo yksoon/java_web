@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style type="text/css">
+		.red{color: red;}
+		.green{color: green;}
+		.silver{color: silver;}
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.6.2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// [1] dotnet이라는 단어가 들어가있는 링크에 배경을 red로 설정
+			$("a[href*='dotnet']").addClass("red");
+			
+			// [2] aspx로 끝나는 링크에 배경을 green으로 설정
+			$('a[href$="aspx"]').addClass("green");
+			
+			jQuery("a[href^='mailto:']").addClass("silver");
+			
+			$('a[href$="com"]').addClass("red");
+			
+		});
+	</script>
+</head>
+<body>
+	<a href="http://www.dotnetkorea.com/">닷넷코리아</a>
+	<br>
+	<a href="http://www.visualacademy.com/Default.aspx">비주얼아카데미</a>
+	<br>
+	<a href="mailto:redplus@hawaso.com">이메일</a>
+	
+	<a href="http://www.naver.com">네이버</a>
+	<a href="http://apple.com/kr">애플</a>
+	<a href="http://google.com">구글</a>
+</body>
+</html>

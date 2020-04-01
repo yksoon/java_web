@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<style type="text/css">
+		.redColor {background-color: red;}
+		.cyanColor {background-color: Cyan;}
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.6.2.js"></script>
+	
+	<script type="text/javascript">
+	   $(document).ready(function() {
+		      $('tr:odd').addClass("redColor");
+		      $('tr:even').addClass("cyanColor");
+		   });
+	</script>
+	
+</head>
+<body>
+	<table width="50%" border="1">
+		<tr><td>0</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>2</td></tr>
+		<tr><td>3</td></tr>
+	</table>
+</body>
+</html>

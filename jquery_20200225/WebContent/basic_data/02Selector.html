@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script type="text/javascript" src="jquery-1.6.2.js"></script>
+	
+	<style type="text/css">
+		.bg {background-color: yellow;}
+		.horizontal {float: left; list-style: none; margin: 10px;}
+	</style>
+	
+	<script type="text/javascript">
+		//[1] li > u 에 대해서 배경색을 옐로우로 설정
+		$(document).ready(function() {
+			$('li > u').addClass('bg');		// li 자식요소중 u태그인 것만 선별
+			
+			$("#myFavorites > li").addClass("horizontal");
+			
+			jQuery('#jquery').click(function() {
+				alert('jQuery');
+			});
+			
+			$('.sil').click(function() {
+				alert('실버라이트');
+			});
+		});
+	</script>
+</head>
+<body>
+	
+	<h3>관심사항</h3>
+	
+	<ul id="myFavorites" type="square">
+		<li><u>C#</u></li>
+		<li>ASP.NET</li>
+		<li></li>
+		<li class="sil">Silverlight</li>
+		<li id="jquery">j<u>Q</u>uery</li>
+	</ul>
+</body>
+</html>

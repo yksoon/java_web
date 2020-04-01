@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>filter() 메서드를 사용해서 조건에 맞는 요소만 가져오기</title>
+
+    <style type="text/css">
+        .redBorder { border:solid 1px red; }
+        .five { border-width:5px; }
+    </style>
+
+    <script src="jquery-1.6.2.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+			
+        	$('img').addClass('redBorder')	// 모든 이미지에 redBorder 클래스 적용
+				.filter('[title*=닷넷]').addClass('five')	// '닷넷' title만 뽑아서 five 클래스 적용
+				.end()	// 부모로 이동
+				.filter('[alt$=디드]').removeClass('redBorder')	// '디드'로 끝나는 alt만 뽑아서 redBoard 클래스 제거
+
+        });
+    </script>
+</head>
+
+ 
+
+<body>
+ <img src="" title="닷넷" alt="닷넷" />
+ <img src="" title="자바" alt="자바" />
+ <img src="" title="임베디드" alt="임베디드" />
+ </body>
+
+</html>

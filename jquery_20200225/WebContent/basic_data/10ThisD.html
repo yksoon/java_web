@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<style type="text/css">
+		.redColor{color: red;}
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.6.2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$('#dnk').bind('click', function () {
+				$('#mainMenu .redColor').removeClass('redColor');
+				
+				$(this).addClass('redColor');
+			});
+			
+			$('#mainMenu .redColor').bind("click", function(){
+				if(this.id=="va") {
+					alert("비주얼아카데미 클릭");
+				}else if (this.id=="ll") {
+					alert($(this).text());
+				}
+			});
+			
+		});
+	</script>
+
+</head>
+<body>
+	<div id="mainMenu">
+		<div id="dnk" class="redColor">닷넷코리아</div>
+		<div id="va" class="redColor">비주얼아카데미</div>
+		<div id="ll" class="redColor">라이선스랜드</div>
+	</div>
+</body>
+</html>
