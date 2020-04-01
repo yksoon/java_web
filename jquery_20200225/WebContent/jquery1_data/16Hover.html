@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>hover()로 마우스오버와 아웃을 동시 처리</title>
+
+    <style type="text/css">
+        .hover { cursor:hand; background-color:Yellow; }
+    </style>
+
+    <script src="jquery-1.6.2.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+			$('table tr:gt(0)').hover(
+			function() {
+				$(this).addClass('hover');
+			},
+			function() {
+				$(this).removeClass('hover');
+			}
+			);
+        	
+        });
+    </script>
+</head>
+ 
+<body> 
+
+<table border="1">
+    <tr><td>제목</td></tr>
+    <tr><td>ASP.NET</td></tr>
+    <tr><td>ASP.NET</td></tr>
+</table>  
+  
+</body>
+</html>

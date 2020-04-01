@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="defaultHandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+	
+	<bean id="managementDAO" class="management.dao.ManagementDAO" />
+	
+	<bean name="/main.do" class="management.controller.MainListController">
+		<property name="dao">
+			<ref bean="managementDAO" />
+		</property>
+	</bean>
+	<bean name="/schedulelist.do" class="management.controller.ScheduleListController">
+		<property name="dao">
+			<ref bean="managementDAO" />
+		</property>
+	</bean>
+	<bean name="/customerlist.do" class="management.controller.CustomerListController">
+		<property name="dao">
+			<ref bean="managementDAO" />
+		</property>
+	</bean>
+	<bean name="/servicelist.do" class="management.controller.ServiceListController">
+		<property name="dao">
+			<ref bean="managementDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean name="/scheduleAddForm.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+ 		<property name="viewName" value="schedule_add_mod_form"></property>
+ 	</bean>
+ 	<bean name="/custormerAddForm.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+ 		<property name="viewName" value="customer_add_mod_form"></property>
+ 	</bean>
+	<bean name="/serviceAddForm.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+ 		<property name="viewName" value="service_add_mod_form"></property>
+ 	</bean>
+ 	
+ 	
+ 	<bean name="/scheduleAdd.do" class="management.controller.ScheduleAddController">
+ 		<property name="dao">
+ 			<ref bean="managementDAO" />
+ 		</property>
+ 		<property name="commandClass" value="management.dto.ManagementDTO" /> 
+ 	</bean>
+ 	<bean name="/custormerAdd.do" class="management.controller.CustomerAddController">
+ 		<property name="dao">
+ 			<ref bean="managementDAO" />
+ 		</property>
+ 		<property name="commandClass" value="management.dto.ManagementDTO" /> 
+ 	</bean>
+ 	<bean name="/serviceAdd.do" class="management.controller.ServiceAddController">
+ 		<property name="dao">
+ 			<ref bean="managementDAO" />
+ 		</property>
+ 		<property name="commandClass" value="management.dto.ManagementDTO" /> 
+ 	</bean>
+ 	
+ 	
+ 	<bean name="/scheduleRe.do" class="management.controller.ScheduleReController">
+	    <property name="dao">
+	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	</bean>
+ 	<bean name="/custormerRe.do" class="management.controller.CustomerReController">
+	    <property name="dao">
+	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	</bean>
+ 	<bean name="/serviceRe.do" class="management.controller.ServiceReController">
+	    <property name="dao">
+	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	</bean>
+ 	
+ 	
+ 	<bean name="/scheduleUp.do" class="management.controller.ScheduleUpController">
+ 	    <property name="dao">
+ 	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	    <property name="commandClass" value="management.dto.ManagementDTO"/>
+ 	</bean>
+	<bean name="/custormerUp.do" class="management.controller.CustomerUpController">
+ 	    <property name="dao">
+ 	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	    <property name="commandClass" value="management.dto.ManagementDTO"/>
+ 	</bean>
+ 	<bean name="/serviceUp.do" class="management.controller.ServiceUpController">
+ 	    <property name="dao">
+ 	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	    <property name="commandClass" value="management.dto.ManagementDTO"/>
+ 	</bean>
+ 	
+ 	
+ 	<bean name="/custormerDe.do" class="management.controller.CustomerDeController">
+ 	    <property name="dao">
+ 	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	    <property name="commandClass" value="management.dto.ManagementDTO"/>
+ 	</bean>
+ 	<bean name="/serviceDe.do" class="management.controller.ServiceDeController">
+ 	    <property name="dao">
+ 	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	    <property name="commandClass" value="management.dto.ManagementDTO"/>
+ 	</bean>
+ 	<bean name="/scheduleDe.do" class="management.controller.ScheduleDeController">
+ 	    <property name="dao">
+ 	        <ref bean="managementDAO"/>
+ 	    </property>
+ 	    <property name="commandClass" value="management.dto.ManagementDTO"/>
+ 	</bean>
+ 	
+<!-- 	<bean name="/writeui.do" class="org.springframework.web.servlet.mvc.ParameterizableViewController"> -->
+<!-- 		<property name="viewName" value="write"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean name="/write.do" class="board.controller.WriteActionController"> -->
+<!-- 		<property name="dao"> -->
+<!-- 			<ref bean="boardDAO" /> -->
+<!-- 		</property> -->
+<!-- 		<property name="commandClass" value="board.command.BoardCommand" /> -->
+<!-- 	</bean> -->
+<!-- 	<bean name="/retrieve.do"  -->
+<!-- 			class="board.controller.RetrieveActionController"> -->
+<!-- 	    <property name="dao"> -->
+<!-- 	        <ref bean="boardDAO"/> -->
+<!-- 	    </property> -->
+<!-- 	</bean> -->
+<!-- 	<bean name="/update.do" class="board.controller.UpdateActionController"> -->
+<!-- 	    <property name="dao"> -->
+<!-- 	        <ref bean="boardDAO"/> -->
+<!-- 	    </property> -->
+<!-- 	    <property name="commandClass" value="board.command.BoardCommand"/> -->
+<!-- 	</bean> -->
+<!-- 	<bean name="/delete.do" class="board.controller.DeleteActionController"> -->
+<!-- 	    <property name="dao"> -->
+<!-- 	        <ref bean="boardDAO"/> -->
+<!-- 	    </property> -->
+<!-- 	</bean> -->
+<!-- 	<bean name="/search.do" class="board.controller.SearchActionController"> -->
+<!-- 	    <property name="dao"> -->
+<!-- 	        <ref bean="boardDAO"/> -->
+<!-- 	    </property> -->
+<!-- 	</bean> -->
+	
+	
+	<bean id="viewResolover" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView" />
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+</beans>

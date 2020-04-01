@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style type="text/css">
+		.redColor{color: red;}
+		.blueColor{color: blue;}
+	</style>
+	
+	<script type="text/javascript" src="jquery-1.6.2.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(
+			function() {
+				
+	      		$("td:contains('RedPlus')")
+	      		.siblings()
+	      		.addClass("redColor")
+	      	
+	      		.parent()
+	      		.find('td:eq(0)')
+	      		.addClass("blueColor");
+	 	  }
+		);
+	</script>
+
+</head>
+<body>
+	<table>
+		<tr>
+			<td>NickName</td><td>이름</td><td>비고</td>
+		</tr>
+		<tr>
+			<td>RedPlus</td><td>레드플러스</td><td>닷넷</td>
+		</tr>
+		<tr>
+			<td>Hawaso</td><td>하와소</td><td>강의</td>
+		</tr>
+	</table>
+</body>
+</html>
